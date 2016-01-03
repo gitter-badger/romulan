@@ -28,6 +28,7 @@
     "commander": "^2.9.0",
     "crypto": "0.0.3",
     "lodash": "^3.10.1",
+    "path-extra": "^3.0.0",
     "prompt": "^0.2.14",
     "sails-disk": "^0.10.8",
     "walk": "^2.3.9",

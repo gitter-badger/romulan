@@ -157,7 +157,7 @@ function resultsToTable(item) {
     var table = new Table();
 
     _.map(item, function(o, i) {
-        o.name = (o.name == null) ? o.name : "Unknown"
+        o.name = o.name || "unknown";
         table.push([i+1, toPercent(o.score), o.name]);
     });
 
