@@ -192,6 +192,11 @@ function processUserSelection(characterizeSearchResults, bigGameObj, input) {
     }
 }
 
+ /**
+ * Show an array of cells as an ascii table
+ * @param  {array} data array of strings
+ * @return {Promise<String>} A promise to the table output.
+ */
 function showTable(data) {
     return resultsToTable(data)
     .then(function(table) {
@@ -200,7 +205,16 @@ function showTable(data) {
     });
 }
 
+/**
+ * Begins interactive process for users to enter or obtain metadata about a
+ * particular piece of software.
+ * @constructor
+ * @param {object} bigGameObj - An object that contans: the basename of the file
+ * scanned, its platform (db entry) and its software (db entry)
+ */
 function promptForNameFromFile(bigGameObj) {
+    // TODO: Add Manual metadata entry
+
     return new Promise(function(resolve, reject) {
         console.log(bigGameObj.basename, ' - ', bigGameObj.platform.name);
 
@@ -219,11 +233,20 @@ function promptForNameFromFile(bigGameObj) {
     });
 }
 
+/**
+ * Build database from semi-constants from the host (such as connected disk
+ * devices) and the default configuration platfrom
+ * @constructor
+ */
 function setup() {
     return createVolumes()
     .then(findOrCreatePlatforms)
 }
 
+/**
+ * Find all games.
+ * @constructor
+ */
 function find() {
     games = models.collections.game
     .find()
@@ -255,7 +278,12 @@ function bigInit() {
     .then(initializeOrm)
 }
 
+/**
+ * Builds the command line interpreter and executes based on syntax.
+ * @constructor
+ */
 function main() {
+    // TODO: Move CLI section to separate file
     commander
     .command('scan [platform]')
     .description('Scan library for new games')
