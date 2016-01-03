@@ -6,10 +6,6 @@
 var diskAdapter = require('sails-disk');
 var path = require('path-extra');
 
-console.log(
-    path.datadir('romulan')
-);
-
 module.exports = {
   // Setup Adapters
   // Creates named adapters that have have been required

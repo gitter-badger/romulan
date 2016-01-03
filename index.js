@@ -10,7 +10,7 @@ var characterize = require('characterize');
 
 var winVolumes = require('./utilities/win-volume');
 var configWaterline = require('./config/waterline');
-var Scan = require('./utilities/scan').Scan;
+var scan = require('./utilities/scan').scan;
 var getMd5 = require('./utilities/scan').getMd5;
 
 global.models = null;
@@ -109,8 +109,9 @@ function refreshLibrary() {
         return models.collections.platform
         .findOne({alias: platformUser.alias})
         .then(function(platformResult) {
-            return new Scan(platformUser.path, platformResult.extensions)
+            return scan(platformUser.paths, platformResult.extensions)
             .then(_.compact)
+            .then(_.flatten)
             .map(linkVolumePath)
             .map(linkPathFileMeta)
             .map(linkFilemetaSoftwarePlatform.bind(null, platformResult));

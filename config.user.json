@@ -1,36 +1,60 @@
 {
 	"platforms": [{
 		"alias": "nintendo-64",
-		"path": "\\\\?\\Volume{4bc1ff8f-b037-4576-97bf-3719bd8c2f4d}\\games\\binaries\\n64"
+		"paths": [
+			"\\\\?\\Volume{4bc1ff8f-b037-4576-97bf-3719bd8c2f4d}\\games\\binaries\\n64"
+		]
 	}, {
 		"alias": "nintendo-ds",
-		"path": "\\\\?\\Volume{4bc1ff8f-b037-4576-97bf-3719bd8c2f4d}\\games\\binaries\\nds"
+		"paths": [
+			"\\\\?\\Volume{4bc1ff8f-b037-4576-97bf-3719bd8c2f4d}\\games\\binaries\\nds"
+		]
 	}, {
 		"alias": "nintendo-entertainment-system-nes",
-		"path": "\\\\?\\Volume{4bc1ff8f-b037-4576-97bf-3719bd8c2f4d}\\games\\binaries\\nes"
+		"paths": [
+			"\\\\?\\Volume{4bc1ff8f-b037-4576-97bf-3719bd8c2f4d}\\games\\binaries\\nes",
+			"\\\\?\\Volume{ea537a07-9dca-11e5-829e-806e6f6e6963}\\games\\binaries\\nes",
+			"\\\\?\\Volume{a2f796bf-1728-11e5-8257-c48e8ff34a40}\\games\\binaries\\nes"
+		]
 	}, {
 		"alias": "nintendo-gameboy",
-		"path": "\\\\?\\Volume{4bc1ff8f-b037-4576-97bf-3719bd8c2f4d}\\games\\binaries\\gb"
+		"paths": [
+			"\\\\?\\Volume{4bc1ff8f-b037-4576-97bf-3719bd8c2f4d}\\games\\binaries\\gb"
+		]
 	}, {
 		"alias": "nintendo-gameboy-advance",
-		"path": "\\\\?\\Volume{4bc1ff8f-b037-4576-97bf-3719bd8c2f4d}\\games\\binaries\\gba"
+		"paths": [
+			"\\\\?\\Volume{4bc1ff8f-b037-4576-97bf-3719bd8c2f4d}\\games\\binaries\\gba"
+		]
 	}, {
 		"alias": "sony-playstation",
-		"path": "\\\\?\\Volume{4bc1ff8f-b037-4576-97bf-3719bd8c2f4d}\\games\\binaries\\psx"
+		"paths": [
+			"\\\\?\\Volume{4bc1ff8f-b037-4576-97bf-3719bd8c2f4d}\\games\\binaries\\psx"
+		]
 	}, {
 		"alias": "sony-playstation-2",
-		"path": "\\\\?\\Volume{4bc1ff8f-b037-4576-97bf-3719bd8c2f4d}\\games\\binaries\\ps2"
+		"paths": [
+			"\\\\?\\Volume{4bc1ff8f-b037-4576-97bf-3719bd8c2f4d}\\games\\binaries\\ps2"
+		]
 	}, {
 		"alias": "super-nintendo-snes",
-		"path": "\\\\?\\Volume{4bc1ff8f-b037-4576-97bf-3719bd8c2f4d}\\games\\binaries\\snes"
+		"paths": [
+			"\\\\?\\Volume{4bc1ff8f-b037-4576-97bf-3719bd8c2f4d}\\games\\binaries\\snes"
+		]
 	}, {
 		"alias": "turbografx-16",
-		"path": "\\\\?\\Volume{4bc1ff8f-b037-4576-97bf-3719bd8c2f4d}\\games\\binaries\\pce"
+		"paths": [
+			"\\\\?\\Volume{4bc1ff8f-b037-4576-97bf-3719bd8c2f4d}\\games\\binaries\\pce"
+		]
 	}, {
 		"alias": "zelda-classic",
-		"path": "\\\\?\\Volume{4bc1ff8f-b037-4576-97bf-3719bd8c2f4d}\\games\\binaries\\zc"
+		"paths": [
+			"\\\\?\\Volume{4bc1ff8f-b037-4576-97bf-3719bd8c2f4d}\\games\\binaries\\zc"
+		]
 	}, {
 		"alias": "flash",
-		"path": "\\\\?\\Volume{4bc1ff8f-b037-4576-97bf-3719bd8c2f4d}\\games\\binaries\\flash"
+		"paths": [
+			"\\\\?\\Volume{4bc1ff8f-b037-4576-97bf-3719bd8c2f4d}\\games\\binaries\\flash"
+		]
 	}]
 }

@@ -1,11 +1,11 @@
 "use strict";
 
-var fs      = require('fs'),
+var fs = require('fs'),
     Promise = require('bluebird'),
-    walk    = require('walk'),
-    _       = require('lodash'),
-    crypto  = require('crypto'),
-    path    = require('path');
+    walk = require('walk'),
+    _ = require('lodash'),
+    crypto = require('crypto'),
+    path = require('path');
 
 Promise.promisifyAll(fs);
 
@@ -16,18 +16,20 @@ exports.getMd5 = function(file) {
         var shasum = crypto.createHash(algo);
         var s = fs.ReadStream(file);
 
-        s.on('data', function(d) { shasum.update(d); });
+        s.on('data', function(d) {
+            shasum.update(d);
+        });
         s.on('end', function() {
             resolve(shasum.digest('hex'));
         });
     });
 }
 
-exports.Scan = function(platformPath, allowedExtensions) {
-    var foundFiles = [];
+function Scan(platformPath, allowedExtensions) {
+    this.foundFiles = [];
+    var that = this;
 
-
-    function fileHandler(allowedExtensions, root, fileStat, next) {
+    this.fileHandler = function(allowedExtensions, root, fileStat, next) {
         var fileInfo = {};
 
         fileInfo['fullpath'] = path.join(root, fileStat.name);
@@ -37,16 +39,16 @@ exports.Scan = function(platformPath, allowedExtensions) {
         // fileInfo['ext'] = getExt(fileInfo.fullpath);
         var ext = getExt(fileInfo.fullpath);
 
-        if(_.contains(allowedExtensions, ext)) {
-        //       md5(fileInfo.fullpath)
-        //       .then(function(md5) {
-        //           fileInfo['md5'] = md5;
-                  foundFiles.push(fileInfo);
-        //       })
-        //       .then(next);
+        if (_.contains(allowedExtensions, ext)) {
+            //       md5(fileInfo.fullpath)
+            //       .then(function(md5) {
+            //           fileInfo['md5'] = md5;
+            that.foundFiles.push(fileInfo);
+            //       })
+            //       .then(next);
         }
         // else {
-          next();
+        next();
         // }
     }
 
@@ -61,10 +63,19 @@ exports.Scan = function(platformPath, allowedExtensions) {
     function getExt(filename) {
         return path.extname(filename).substr(1);
     }
+};
 
-    return new Promise(function(resolve, reject) {
-        var walker = walk.walk(platformPath, { followLinks: false });
-        walker.on("file", fileHandler.bind(null, allowedExtensions));
-        walker.on("end", resolve.bind(null, foundFiles));
+exports.scan = function(platformPath, allowedExtensions) {
+    return Promise.map(platformPath, function(pp) {
+        return new Promise(function(resolve, reject) {
+            var scan = new Scan(platformPath, allowedExtensions);
+            var walker = walk.walk(pp, {
+                followLinks: false
+            });
+            walker.on("file", scan.fileHandler.bind(null, allowedExtensions));
+            walker.on("end", resolve.bind(null,
+                scan.foundFiles
+            ));
+        });
     });
 };
