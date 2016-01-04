@@ -9,10 +9,10 @@ var commander = require('commander');
 var characterize = require('characterize');
 var path = require('path');
 
+var helpers = require('./helpers');
 var winVolumes = require('./utilities/win-volume');
 var configWaterline = require('./config/waterline');
 var scan = require('./utilities/scan').scan;
-var getMd5 = require('./utilities/scan').getMd5;
 
 global.models = null;
 global._ = require('lodash');
@@ -96,7 +96,7 @@ function linkFilemetaSoftwarePlatform(platformResult, fileMetaResult) {
 
 function linkPathFileMeta(pathResult) {
     return models.collections.path.getFullPath(pathResult.id)
-        .then(getMd5)
+        .then(helpers.md5)
         .then(function(md5Result) {
             return models.collections.filemeta
                 .findOrCreate({
