@@ -178,14 +178,10 @@ function resultsToTable(item) {
 
     _.map(item, function(o, i) {
         o.name = o.name || "unknown";
-        table.push([i + 1, toPercent(o.score), o.name]);
+        table.push([i + 1, helpers.percent(o.score), o.name]);
     });
 
     return Promise.resolve(table);
-}
-
-function toPercent(num) {
-    return (num * 100).toFixed(0) + "%";
 }
 
 function characterizeToGame(bigGameObj, gameResult) {
