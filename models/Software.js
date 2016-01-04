@@ -54,21 +54,24 @@ module.exports = {
                 console.log(filemeta);
 
                 return models.collections.volume
-                .findOne(filemeta.paths[0].volume)
-                .then(function(volume) {
-                    oldPath = path.join(volume.letter, filemeta.paths[0].name);
-                    newPath = path.join(volumeObj.letter, filemeta.paths[0].name);
-                })
-                // TODO: Quick hack to get the first path for game
-                // currently doesn not support duplicate files
-                .then(function() {
-                    return models.collections.path.update(filemeta.paths[0].id, {
-                        volume: volumeObj.id
+                    .findOne(filemeta.paths[0].volume)
+                    .then(function(volume) {
+                        oldPath = path.join(volume.letter, filemeta.paths[0].name);
+                        newPath = path.join(volumeObj.letter, filemeta.paths[0].name);
                     })
+                    // TODO: Quick hack to get the first path for game
+                    // currently doesn not support duplicate files
                     .then(function() {
-                        return Promise.resolve({old: oldPath, new: newPath});
+                        return models.collections.path.update(filemeta.paths[0].id, {
+                                volume: volumeObj.id
+                            })
+                            .then(function() {
+                                return Promise.resolve({
+                                    old: oldPath,
+                                    new: newPath
+                                });
+                            })
                     })
-                })
             })
     },
 
@@ -92,6 +95,18 @@ module.exports = {
             })
             .then(function(pathResult) {
                 return path.parse(pathResult.name).name;
+            });
+    },
+
+    linkFilemetaPlatform(platform, filemeta) {
+        return models.collections.software
+            .findOrCreate({
+                uid: filemeta.md5
+            })
+            .then(function(software) {
+                software.filemeta = filemeta.id;
+                software.platform = platform.id;
+                return software.save();
             });
     }
 };

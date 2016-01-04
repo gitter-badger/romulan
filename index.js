@@ -8,11 +8,11 @@ var commander = require('commander');
 var characterize = require('characterize');
 var path = require('path');
 
-var helpers = require('./helpers');
-var orm = null;
-var winVolumes = require('./utilities/win-volume');
-var scan = require('./utilities/scan').scan;
+var helpers = require('./lib/helpers');
+var winVolumes = require('./lib/win-volume');
+var scan = require('./lib/scan').scan;
 
+var orm = null;
 global.models = null;
 global._ = require('lodash');
 
@@ -60,18 +60,6 @@ function findOrCreatePlatforms(obj) {
 // FILES
 //////////////////////////////////////////////////////////////////
 
-function linkFilemetaSoftwarePlatform(platformResult, fileMetaResult) {
-    return models.collections.software
-        .findOrCreate({
-            uid: fileMetaResult.md5
-        })
-        .then(function(softwareRecord) {
-            softwareRecord.filemeta = fileMetaResult.id;
-            softwareRecord.platform = platformResult.id;
-            return softwareRecord.save();
-        });
-}
-
 function linkPathFileMeta(pathResult) {
     return models.collections.path.getFullPath(pathResult.id)
         .then(helpers.md5)
@@ -110,7 +98,7 @@ function refreshLibrary() {
                     .then(_.flatten)
                     .map(linkVolumePath)
                     .map(linkPathFileMeta)
-                    .map(linkFilemetaSoftwarePlatform.bind(null, platformResult));
+                    .map(models.collections.software.linkFilemetaPlatform.bind(null, platformResult));
             });
     });
 };
