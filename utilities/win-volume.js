@@ -4,15 +4,17 @@ var Promise = require('bluebird');
 var util = require('util');
 
 function execute(command, callback) {
-    exec(command, function(error, stdout, stderr){ callback(stdout); });
+    exec(command, function(error, stdout, stderr) {
+        callback(stdout);
+    });
 };
 
 function parseGuid(str) {
-  return str.match(/[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}/i)[0];
+    return str.match(/[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}/i)[0];
 }
 
 function parsePath(str) {
-  return str.slice(48);
+    return str.slice(48);
 }
 
 exports.buildPath = function(guid, path) {
@@ -38,10 +40,10 @@ exports.getVolumes = function() {
             while (i < lines.length) {
                 line = lines[i].trim();
 
-                if(_(line).startsWith('\\')) {
+                if (_(line).startsWith('\\')) {
                     mount_points.push({
                         "guid": parseGuid(line),
-                        "letter": lines[i+1].trim()
+                        "letter": lines[i + 1].trim()
                     });
                 }
 
