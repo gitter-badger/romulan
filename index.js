@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-var Waterline = require('waterline');
 var Promise = require('bluebird');
 var fs = Promise.promisifyAll(require("fs"));
 var prompt = Promise.promisifyAll(require('prompt'));
@@ -10,35 +9,14 @@ var characterize = require('characterize');
 var path = require('path');
 
 var helpers = require('./helpers');
+var orm = null;
 var winVolumes = require('./utilities/win-volume');
-var configWaterline = require('./config/waterline');
 var scan = require('./utilities/scan').scan;
 
 global.models = null;
 global._ = require('lodash');
 
-// Instantiate a new instance of the ORM
-var orm = new Waterline();
 var table = new Table();
-Promise.promisifyAll(orm);
-
-//////////////////////////////////////////////////////////////////
-// WATERLINE
-//////////////////////////////////////////////////////////////////
-
-function addToOrm(model) {
-    var model = require('./models/' + model);
-    model.connection = 'myLocalDisk';
-    orm.loadCollection(Waterline.Collection.extend(model));
-}
-
-function initializeOrm() {
-    return orm.initializeAsync(configWaterline)
-        .then(function(m) {
-            global.models = m;
-            return Promise.resolve(models);
-        });
-}
 
 //////////////////////////////////////////////////////////////////
 // LOCAL
@@ -353,11 +331,6 @@ function moveGame(softwareId, volumeName) {
 // MAIN
 //////////////////////////////////////////////////////////////////
 
-function bigInit() {
-    return fs.readdirAsync('./models')
-        .each(addToOrm)
-        .then(initializeOrm)
-}
 
 /**
  * Builds the command line interpreter and executes based on syntax.
@@ -400,6 +373,8 @@ function main() {
     commander.parse(process.argv);
 }
 
-
-bigInit()
-    .then(main)
+require('./lib/orm')
+    .then(function(result) {
+        orm = result;
+    })
+    .then(main);
