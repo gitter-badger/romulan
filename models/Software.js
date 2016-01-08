@@ -10,8 +10,8 @@ module.exports = {
         uid: {
             'type': 'string',
             required: true,
-            minLength: 32,
-            maxLength: 32
+            // minLength: 32,
+            // maxLength: 32
         },
 
         // Associations (up)

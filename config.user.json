@@ -56,5 +56,13 @@
         "paths": [
             "\\\\?\\Volume{4bc1ff8f-b037-4576-97bf-3719bd8c2f4d}\\games\\binaries\\flash"
         ]
+    }, {
+        "alias": "steam-win",
+        "folders": true,
+        "paths": [
+            "\\\\?\\Volume{4bc1ff8f-b037-4576-97bf-3719bd8c2f4d}\\games\\binaries\\steam-win",
+            "\\\\?\\Volume{a2f796bf-1728-11e5-8257-c48e8ff34a40}\\games\\binaries\\steam-win",
+            "\\\\?\\Volume{ea537a07-9dca-11e5-829e-806e6f6e6963}\\games\\binaries\\steam-win"
+        ]
     }]
 }
