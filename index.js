@@ -4,8 +4,6 @@ global.appRoot = require('app-root-path');
 global._ = require('lodash');
 global.Promise = require('bluebird');
 
-
-
 var Romulan = function() {
     this.ready = Promise;
     this.models = null;

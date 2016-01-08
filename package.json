@@ -33,6 +33,7 @@
     "prompt": "^0.2.14",
     "sails-disk": "^0.10.8",
     "walk": "^2.3.9",
-    "waterline": "^0.10.29"
+    "waterline": "^0.10.29",
+    "humid": "github:miniarray/humid"
   }
 }
