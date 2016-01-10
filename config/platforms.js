@@ -1,290 +1,372 @@
-module.exports = [{
-    name: "3DO",
-    alias: "3do"
-}, {
-    name: "Acorn Archimedes",
-    alias: "acorn-archimedes"
-}, {
-    name: "Amiga",
-    alias: "amiga"
-}, {
-    name: "Amiga CD32",
-    alias: "amiga-cd32"
-}, {
-    name: "Amstrad CPC",
-    alias: "amstrad-cpc"
-}, {
-    name: "Android",
-    alias: "android"
-}, {
-    name: "Apple II",
-    alias: "apple2"
-}, {
-    name: "Arcade",
-    alias: "arcade"
-}, {
-    name: "Atari 2600",
-    alias: "atari-2600"
-}, {
-    name: "Atari 5200",
-    alias: "atari-5200"
-}, {
-    name: "Atari 7800",
-    alias: "atari-7800"
-}, {
-    name: "Atari 800",
-    alias: "atari800"
-}, {
-    name: "Atari Jaguar",
-    alias: "atari-jaguar"
-}, {
-    name: "Atari Jaguar CD",
-    alias: "atari-jaguar-cd"
-}, {
-    name: "Atari Lynx",
-    alias: "atari-lynx"
-}, {
-    name: "Atari ST",
-    alias: "atari-st"
-}, {
-    name: "Atari XE",
-    alias: "atari-xe"
-}, {
-    name: "Colecovision",
-    alias: "colecovision"
-}, {
-    name: "Commodore 128",
-    alias: "c128"
-}, {
-    name: "Commodore 64",
-    alias: "commodore-64"
-}, {
-    name: "Commodore VIC-20",
-    alias: "commodore-vic20"
-}, {
-    name: "Dragon 32/64",
-    alias: "dragon32-64"
-}, {
-    name: "Fairchild Channel F",
-    alias: "fairchild"
-}, {
-    name: "Famicom Disk System",
-    alias: "fds"
-}, {
-    name: "FM Towns Marty",
-    alias: "fmtowns"
-}, {
-    name: "Game &amp;amp; Watch",
-    alias: "game-and-watch"
-}, {
-    name: "Game.com",
-    alias: "game-com"
-}, {
-    name: "Handheld Electronic Games (LCD)",
-    alias: "lcd"
-}, {
-    name: "Intellivision",
-    alias: "intellivision"
-}, {
-    name: "iOS",
-    alias: "ios"
-}, {
-    name: "Mac OS",
-    alias: "mac-os"
-}, {
-    name: "Magnavox Odyssey 2",
-    alias: "magnavox-odyssey-2"
-}, {
-    name: "Mega Duck",
-    alias: "megaduck"
-}, {
-    name: "Microsoft Xbox",
-    alias: "microsoft-xbox"
-}, {
-    name: "Microsoft Xbox 360",
-    alias: "microsoft-xbox-360"
-}, {
-    name: "Microsoft Xbox One",
-    alias: "microsoft-xbox-one"
-}, {
-    name: "MSX",
-    alias: "msx"
-}, {
-    name: "N-Gage",
-    alias: "ngage"
-}, {
-    name: "Neo Geo Pocket",
-    alias: "neo-geo-pocket"
-}, {
-    name: "Neo Geo Pocket Color",
-    alias: "neo-geo-pocket-color"
-}, {
-    name: "NeoGeo",
-    alias: "neogeo"
-}, {
-    name: "Nintendo 3DS",
-    alias: "nintendo-3ds"
-}, {
-    name: "Nintendo 64",
-    alias: "nintendo-64",
-    "extensions": [
-        "n64",
-        "z64"
-    ]
-}, {
-    name: "Nintendo DS",
-    alias: "nintendo-ds",
-    "extensions": [
-        "nds"
-    ]
-}, {
-    name: "Nintendo Entertainment System (NES)",
-    alias: "nintendo-entertainment-system-nes",
-    "extensions": [
-        "nes"
-    ]
-}, {
-    name: "Nintendo Game Boy",
-    alias: "nintendo-gameboy",
-    "extensions": [
-        "gb"
-    ]
-}, {
-    name: "Nintendo Game Boy Advance",
-    alias: "nintendo-gameboy-advance",
-    "extensions": [
-        "gba"
-    ]
-}, {
-    name: "Nintendo Game Boy Color",
-    alias: "nintendo-gameboy-color"
-}, {
-    name: "Nintendo GameCube",
-    alias: "nintendo-gamecube"
-}, {
-    name: "Nintendo Virtual Boy",
-    alias: "nintendo-virtual-boy"
-}, {
-    name: "Nintendo Wii",
-    alias: "nintendo-wii"
-}, {
-    name: "Nintendo Wii U",
-    alias: "nintendo-wii-u"
-}, {
-    name: "Nuon",
-    alias: "nuon"
-}, {
-    name: "Ouya",
-    alias: "ouya"
-}, {
-    name: "PC",
-    alias: "pc"
-}, {
-    name: "PC-88",
-    alias: "pc88"
-}, {
-    name: "PC-98",
-    alias: "pc98"
-}, {
-    name: "PC-FX",
-    alias: "pcfx"
-}, {
-    name: "Philips CD-i",
-    alias: "philips-cd-i"
-}, {
-    name: "Sega 32X",
-    alias: "sega-32x"
-}, {
-    name: "Sega CD",
-    alias: "sega-cd"
-}, {
-    name: "Sega Dreamcast",
-    alias: "sega-dreamcast"
-}, {
-    name: "Sega Game Gear",
-    alias: "sega-game-gear"
-}, {
-    name: "Sega Genesis",
-    alias: "sega-genesis"
-}, {
-    name: "Sega Master System",
-    alias: "sega-master-system"
-}, {
-    name: "Sega Saturn",
-    alias: "sega-saturn"
-}, {
-    name: "SEGA SG-1000",
-    alias: "sg1000"
-}, {
-    name: "Sinclair ZX Spectrum",
-    alias: "sinclair-zx-spectrum"
-}, {
-    name: "Sony Playstation",
-    alias: "sony-playstation",
-    "extensions": [
-        "iso",
-        "cue"
-    ]
-}, {
-    name: "Sony Playstation 2",
-    alias: "sony-playstation-2",
-    "extensions": [
-        "iso"
-    ]
-}, {
-    name: "Sony Playstation 3",
-    alias: "sony-playstation-3"
-}, {
-    name: "Sony Playstation 4",
-    alias: "sony-playstation-4"
-}, {
-    name: "Sony Playstation Vita",
-    alias: "sony-playstation-vita"
-}, {
-    name: "Sony PSP",
-    alias: "sony-psp"
-}, {
-    name: "Super Nintendo (SNES)",
-    alias: "super-nintendo-snes",
-    "extensions": [
-        "smc",
-        "sfc",
-        "fig"
-    ]
-}, {
-    name: "TRS-80 Color Computer",
-    alias: "trs80-color"
-}, {
-    name: "TurboGrafx 16",
-    alias: "turbografx-16",
-    "extensions": [
-        "pce"
-    ]
-}, {
-    name: "Vectrex",
-    alias: "vectrex"
-}, {
-    name: "WonderSwan",
-    alias: "wonderswan"
-}, {
-    name: "WonderSwan Color",
-    alias: "wonderswan-color"
-}, {
-    name: "X68000",
-    alias: "x68000"
-}, {
-    name: "Zelda Classic",
-    alias: "zelda-classic",
-    "extensions": [
-        "qst"
-    ]
-}, {
-    name: "Steam (windows)",
-    alias: "steam-win"
-}, {
-    name: "Adobe Flash",
-    alias: "flash",
-    "extensions": [
-        "swf"
-    ]
-}];
+module.exports = {
+	"3do": {
+		"name": "3DO"
+	},
+	"acorn-archimedes": {
+		"name": "Acorn Archimedes"
+
+	},
+	"amiga": {
+		"name": "Amiga"
+
+	},
+	"amiga-cd32": {
+		"name": "Amiga CD32"
+
+	},
+	"amstrad-cpc": {
+		"name": "Amstrad CPC"
+
+	},
+	"android": {
+		"name": "Android"
+
+	},
+	"apple2": {
+		"name": "Apple II"
+
+	},
+	"arcade": {
+		"name": "Arcade"
+
+	},
+	"atari-2600": {
+		"name": "Atari 2600"
+
+	},
+	"atari-5200": {
+		"name": "Atari 5200"
+
+	},
+	"atari-7800": {
+		"name": "Atari 7800"
+
+	},
+	"atari800": {
+		"name": "Atari 800"
+
+	},
+	"atari-jaguar": {
+		"name": "Atari Jaguar"
+
+	},
+	"atari-jaguar-cd": {
+		"name": "Atari Jaguar CD"
+
+	},
+	"atari-lynx": {
+		"name": "Atari Lynx"
+
+	},
+	"atari-st": {
+		"name": "Atari ST"
+
+	},
+	"atari-xe": {
+		"name": "Atari XE"
+
+	},
+	"colecovision": {
+		"name": "Colecovision"
+
+	},
+	"c128": {
+		"name": "Commodore 128"
+
+	},
+	"commodore-64": {
+		"name": "Commodore 64"
+
+	},
+	"commodore-vic20": {
+		"name": "Commodore VIC-20"
+
+	},
+	"dragon32-64": {
+		"name": "Dragon 32/64"
+
+	},
+	"fairchild": {
+		"name": "Fairchild Channel F"
+
+	},
+	"fds": {
+		"name": "Famicom Disk System"
+
+	},
+	"fmtowns": {
+		"name": "FM Towns Marty"
+
+	},
+	"game-and-watch": {
+		"name": "Game &amp;amp; Watch"
+
+	},
+	"game-com": {
+		"name": "Game.com"
+
+	},
+	"lcd": {
+		"name": "Handheld Electronic Games (LCD)"
+
+	},
+	"intellivision": {
+		"name": "Intellivision"
+
+	},
+	"ios": {
+		"name": "iOS"
+
+	},
+	"mac-os": {
+		"name": "Mac OS"
+
+	},
+	"magnavox-odyssey-2": {
+		"name": "Magnavox Odyssey 2"
+
+	},
+	"megaduck": {
+		"name": "Mega Duck"
+
+	},
+	"microsoft-xbox": {
+		"name": "Microsoft Xbox"
+
+	},
+	"microsoft-xbox-360": {
+		"name": "Microsoft Xbox 360"
+
+	},
+	"microsoft-xbox-one": {
+		"name": "Microsoft Xbox One"
+
+	},
+	"msx": {
+		"name": "MSX"
+
+	},
+	"ngage": {
+		"name": "N-Gage"
+
+	},
+	"neo-geo-pocket": {
+		"name": "Neo Geo Pocket"
+
+	},
+	"neo-geo-pocket-color": {
+		"name": "Neo Geo Pocket Color"
+
+	},
+	"neogeo": {
+		"name": "NeoGeo"
+
+	},
+	"nintendo-3ds": {
+		"name": "Nintendo 3DS"
+
+	},
+	"nintendo-64": {
+		"name": "Nintendo 64",
+
+		"extensions": [
+			"n64",
+			"z64"
+		]
+	},
+	"nintendo-ds": {
+		"name": "Nintendo DS",
+
+		"extensions": [
+			"nds"
+		]
+	},
+	"nintendo-entertainment-system-nes": {
+		"name": "Nintendo Entertainment System (NES)",
+
+		"extensions": [
+			"nes"
+		]
+	},
+	"nintendo-gameboy": {
+		"name": "Nintendo Game Boy",
+
+		"extensions": [
+			"gb"
+		]
+	},
+	"nintendo-gameboy-advance": {
+		"name": "Nintendo Game Boy Advance",
+
+		"extensions": [
+			"gba"
+		]
+	},
+	"nintendo-gameboy-color": {
+		"name": "Nintendo Game Boy Color"
+
+	},
+	"nintendo-gamecube": {
+		"name": "Nintendo GameCube"
+
+	},
+	"nintendo-virtual-boy": {
+		"name": "Nintendo Virtual Boy"
+
+	},
+	"nintendo-wii": {
+		"name": "Nintendo Wii"
+
+	},
+	"nintendo-wii-u": {
+		"name": "Nintendo Wii U"
+
+	},
+	"nuon": {
+		"name": "Nuon"
+
+	},
+	"ouya": {
+		"name": "Ouya"
+
+	},
+	"pc": {
+		"name": "PC"
+
+	},
+	"pc88": {
+		"name": "PC-88"
+
+	},
+	"pc98": {
+		"name": "PC-98"
+
+	},
+	"pcfx": {
+		"name": "PC-FX"
+
+	},
+	"philips-cd-i": {
+		"name": "Philips CD-i"
+
+	},
+	"sega-32x": {
+		"name": "Sega 32X"
+
+	},
+	"sega-cd": {
+		"name": "Sega CD"
+
+	},
+	"sega-dreamcast": {
+		"name": "Sega Dreamcast"
+
+	},
+	"sega-game-gear": {
+		"name": "Sega Game Gear"
+
+	},
+	"sega-genesis": {
+		"name": "Sega Genesis"
+
+	},
+	"sega-master-system": {
+		"name": "Sega Master System"
+
+	},
+	"sega-saturn": {
+		"name": "Sega Saturn"
+
+	},
+	"sg1000": {
+		"name": "SEGA SG-1000"
+
+	},
+	"sinclair-zx-spectrum": {
+		"name": "Sinclair ZX Spectrum"
+
+	},
+	"sony-playstation": {
+		"name": "Sony Playstation",
+
+		"extensions": [
+			"iso",
+			"cue"
+		]
+	},
+	"sony-playstation-2": {
+		"name": "Sony Playstation 2",
+
+		"extensions": [
+			"iso"
+		]
+	},
+	"sony-playstation-3": {
+		"name": "Sony Playstation 3"
+
+	},
+	"sony-playstation-4": {
+		"name": "Sony Playstation 4"
+
+	},
+	"sony-playstation-vita": {
+		"name": "Sony Playstation Vita"
+
+	},
+	"sony-psp": {
+		"name": "Sony PSP"
+
+	},
+	"super-nintendo-snes": {
+		"name": "Super Nintendo (SNES)",
+		"extensions": [
+			"smc",
+			"sfc",
+			"fig"
+		]
+	},
+	"trs80-color": {
+		"name": "TRS-80 Color Computer"
+
+	},
+	"turbografx-16": {
+		"name": "TurboGrafx 16",
+
+		"extensions": [
+			"pce"
+		]
+	},
+	"vectrex": {
+		"name": "Vectrex"
+
+	},
+	"wonderswan": {
+		"name": "WonderSwan"
+
+	},
+	"wonderswan-color": {
+		"name": "WonderSwan Color"
+
+	},
+	"x68000": {
+		"name": "X68000"
+
+	},
+	"zelda-classic": {
+		"name": "Zelda Classic",
+
+		"extensions": [
+			"qst"
+		]
+	},
+	"steam-win": {
+		"name": "Steam (windows)"
+
+	},
+	"flash": {
+		"name": "Adobe Flash",
+		"extensions": [
+			"swf"
+		]
+	}
+}

@@ -4,7 +4,6 @@
 
 // Require any waterline compatible adapters here
 var diskAdapter = require('sails-disk');
-var path = require('path-extra');
 
 module.exports = {
     // Setup Adapters

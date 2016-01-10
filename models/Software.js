@@ -1,5 +1,3 @@
-var path = require('path');
-
 module.exports = {
     identity: 'software',
     attributes: {
@@ -94,8 +92,9 @@ module.exports = {
                     .findOne(sw.filemeta);
             })
             .then(function(pathResult) {
-                return path.parse(pathResult.name).name;
-            });
+                return global.path.parse(pathResult.name).name;
+            })
+            .catch(console.log);
     },
 
     linkFilemetaPlatform(platform, filemeta) {

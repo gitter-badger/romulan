@@ -3,6 +3,8 @@
 global.appRoot = require('app-root-path');
 global._ = require('lodash');
 global.Promise = require('bluebird');
+global.path = require('path-extra');
+global.config = {};
 
 var Romulan = function() {
     this.ready = Promise;
@@ -10,13 +12,15 @@ var Romulan = function() {
     this.root = this;
 
     this.Software = require(appRoot + '/lib/Software');
+    this.Platform = require(appRoot + '/lib/Platform');
     this.Config = require(appRoot + '/lib/Config');
     this.Volume = require(appRoot + '/lib/Volume');
 
     this.init = function() {
         return require(appRoot + '/lib/orm').then(m => {
             global.models = this.models = m;
-        });
+        })
+        .then(this.Config.setup);
     };
 
     // /**
@@ -61,20 +65,8 @@ var Romulan = function() {
     this.setup = function() {
         return this.ready
             .then(this.Volume.scan)
-            .then(this.Config.setup)
-            // .then(nameVolumes)
+            .then(this.Platform.setup)
     }
-
-    /**
-     * Scan for new games.
-     * @constructor
-     */
-    this.scan = function() {
-        var configUser = require(appRoot + '/config.user');
-
-        return this.ready
-            .then(this.Software.scan);
-    };
 
     /**
      * Find all games.
