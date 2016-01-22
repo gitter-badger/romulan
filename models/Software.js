@@ -88,6 +88,7 @@ module.exports = {
         return models.collections.software
             .findOne(id)
             .then(function(sw) {
+                console.log(sw)
                 return models.collections.path
                     .findOne(sw.filemeta);
             })

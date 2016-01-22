@@ -6,10 +6,9 @@ global.Promise = require('bluebird');
 global.path = require('path-extra');
 global.config = {};
 
-var Romulan = function() {
+var Romulan = function(configObject) {
     this.ready = Promise;
     this.models = null;
-    this.root = this;
 
     this.Software = require(appRoot + '/lib/Software');
     this.Platform = require(appRoot + '/lib/Platform');
@@ -17,10 +16,10 @@ var Romulan = function() {
     this.Volume = require(appRoot + '/lib/Volume');
 
     this.init = function() {
-        return require(appRoot + '/lib/orm').then(m => {
-            global.models = this.models = m;
-        })
-        .then(this.Config.setup);
+        return this.Config.init(configObject)
+            .then(() => require(appRoot + '/lib/orm').then(m => {
+                global.models = this.models = m;
+            }));
     };
 
     // /**

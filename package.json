@@ -4,7 +4,7 @@
   "description": "Game database manager",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,7 @@
   "dependencies": {
     "app-root-path": "^1.0.0",
     "bluebird": "^3.1.1",
-    "characterize": "miniarray/characterize",
+    "characterize": "github:miniarray/characterize",
     "cli-table": "^0.3.1",
     "commander": "^2.9.0",
     "crypto": "0.0.3",
@@ -35,5 +35,11 @@
     "walk": "^2.3.9",
     "waterline": "^0.10.29",
     "humid": "github:miniarray/humid"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "commitizen": "^2.5.0",
+    "cz-conventional-changelog": "^1.1.5",
+    "mocha": "^2.3.4"
   }
 }
